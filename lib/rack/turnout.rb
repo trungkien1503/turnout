@@ -135,7 +135,7 @@ class Rack::Turnout
 
   def json?
     accept = self.request.env['HTTP_ACCEPT']
-    accept != nil && accept.include?('json')
+    accept != nil && !accept.include?('html')
   end
 
   def content_type
